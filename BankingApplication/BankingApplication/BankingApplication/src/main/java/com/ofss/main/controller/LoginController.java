@@ -22,12 +22,12 @@ public class LoginController {
 	private LoginService loginService;
 	
 	@PostMapping("find")
-    public Customer getCustomerByUsername(@RequestBody  Customer customer) {
+    public String getCustomerByUsername(@RequestBody  Customer customer) {
 		System.out.println(customer);
         return loginService.findCustomerByUsername(customer);
     }
 	@PostMapping("customers")
-	public Customer addNewEmployeeToDB(@RequestBody  Customer customer) {
+	public String addNewEmployeeToDB(@RequestBody  Customer customer) {
 		return loginService.addNewEmployee(customer);
 	}
 }
