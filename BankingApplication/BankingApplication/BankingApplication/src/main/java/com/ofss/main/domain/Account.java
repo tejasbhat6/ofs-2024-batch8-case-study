@@ -1,15 +1,39 @@
 
 package com.ofss.main.domain;
-import java.util.*; 
+import java.util.*;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table; 
+
+@Entity
+@Table(name="Account")
 public class Account {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name ="account_id")
     private int account_id;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="customer_id")
     private Customer customer;
+	@Column(name ="account_type")
     private String account_type;
+	@Column(name ="account_rate")
     private double account_rate;
+	@Column(name ="account_balance")
     private double account_balance;
+	@Column(name ="account_minimum_balance")
     private double account_minimum_balance;
+	@Column(name ="account_status")
     private String account_status;
+	@Column(name ="overdraft_amount")
     private int overdraft_amount;
 
     
@@ -24,7 +48,15 @@ public class Account {
         this.account_status = account_status;
         this.overdraft_amount = overdraft_amount;
     }
-
+public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+public Account() {
+	
+}
     public Account(int account_id, String account_type, double account_rate, double account_balance,
     double account_minimum_balance, String account_status, int overdraft_amount) {
         this.account_id = account_id;
@@ -42,12 +74,7 @@ public class Account {
     public void setAccount_id(int account_id) {
         this.account_id = account_id;
     }
-    public Customer getCustomer_id() {
-        return customer;
-    }
-    public void setCustomer_id(Customer customer_id) {
-        this.customer = customer_id;
-    }
+
     public String getAccount_type() {
         return account_type;
     }
