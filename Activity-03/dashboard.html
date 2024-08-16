@@ -1,0 +1,86 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+
+
+ -->
+ <!-- Activity-02 -->
+<div class="oj-hybrid-padding">
+  <h2>Registration</h2>
+  <oj-c-form-layout
+    id="formLayoutOptions"
+    max-columns="4"
+    direction="row"
+    user-assistance-density="compact"
+  >
+    <h5>Enter name</h5>
+    <oj-c-input-text
+      id="text-input"
+      value="{{firstname}}"
+      label-hint="Enter firstname"
+      label-edge="inside"
+    ></oj-c-input-text>
+
+    <h6>Hey <oj-bind-text value="[[firstname]]"></oj-bind-text></h6>
+
+    <h5>Enter salary</h5>
+    <oj-c-input-number
+      value="{{salary}}"
+      label-hint="Enter salary"
+      min="0"
+      max="100"
+      step="0"
+    ></oj-c-input-number>
+    <h6>Salary is <oj-bind-text value="[[salary]]"></oj-bind-text></h6>
+
+    <h5>Enter Password</h5>
+    <oj-c-input-password
+      value="{{password}}"
+      label-hint="Enter password"
+    ></oj-c-input-password>
+
+    <h5>Enter date</h5>
+    <oj-c-input-date-text
+      label-hint="Enter date"
+      value="{{date}}"
+    ></oj-c-input-date-text>
+    <h6>Date is <oj-bind-text value="[[date]]"></oj-bind-text></h6>
+
+
+    <!-- Activity-03 -->
+    <h5>Button</h5>
+    <oj-button id="button1" on-oj-action="[[buttonAction]]"
+      >Button Action 1</oj-button
+    >
+    <span id="results">
+      <oj-bind-text value="[[activatedButton]]"></oj-bind-text>
+    </span>
+
+    <h5>Update button</h5>
+    <oj-c-message-banner
+      data="[[personalInformationMessages]]"
+      type="section"
+      on-oj-close="[[closePersonalInformationMessage]]"
+    ></oj-c-message-banner>
+
+    <oj-form-layout class="oj-sm-margin-5x-top" direction="row" max-columns="3">
+      <oj-c-input-text label-hint="Employee Name"></oj-c-input-text>
+      <oj-c-input-text label-hint="Employee DOB"></oj-c-input-text>
+      <oj-c-input-text label-hint="Employee Email"></oj-c-input-text>
+    </oj-form-layout>
+
+    <oj-c-button
+      chroming="outlined"
+      on-oj-action="[[updatePersonalInfo]]"
+      label="Update"
+    ></oj-c-button>
+    
+    <div class="oj-sm-margin-1x-bottom">Determinate Progress Bar</div>
+    <oj-c-progress-bar
+      class="oj-sm-margin-4x-bottom demo-width"
+      id="progressBar"
+      value="{{progressValue}}"
+    ></oj-c-progress-bar>
+  </oj-c-form-layout>
+</div>

@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ofss.main.domain.Account;
 import com.ofss.main.domain.Customer;
+import com.ofss.main.domain.Transaction;
 import com.ofss.main.repository.AccountRepo;
 import com.ofss.main.service.AccountService;
 import com.ofss.main.service.LoginService;
+import com.ofss.main.service.TransactionService;
 
 @RequestMapping("customercrudapi")
 @CrossOrigin("*")
@@ -25,7 +27,10 @@ import com.ofss.main.service.LoginService;
 public class LoginController {
 	@Autowired
 	private LoginService loginService;
-	@Autowired AccountService accountService;
+	@Autowired 
+	AccountService accountService;
+	@Autowired
+	TransactionService transactionService;
 	
 	@PostMapping("find")
     public String getCustomerByUsername(@RequestBody  Customer customer) {
@@ -46,4 +51,8 @@ public class LoginController {
 	return accountService.createAccount(account);
 	  
   }
+	@GetMapping("alltransactions/{id}")
+	public List<Transaction> allTransactions(@PathVariable int id){
+		return  transactionService.listOfTransactions(id);
+	}
 }
