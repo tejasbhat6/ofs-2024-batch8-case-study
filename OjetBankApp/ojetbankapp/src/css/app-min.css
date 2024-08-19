@@ -1,0 +1,18 @@
+.send-off-screen{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}.demo-oracle-icon{width:137px;height:18px}.demo-oracle-icon:before{content:url(images/oracle_logo.svg)}html:not([dir=rtl]) .demo-oracle-icon{padding-right:4px}html[dir=rtl] .demo-oracle-icon{padding-left:4px}.demo-oracle-icon:before{display:inline}.demo-appheader-avatar{width:24px;height:24px}.demo-appheader-avatar:before{content:url(images/avatar_24px.png)}@media (-webkit-min-device-pixel-ratio:1.5),(min-resolution:144dpi),(min-resolution:1.5dppx){.demo-appheader-avatar:before{content:url(images/avatar_24px_2x.png);-webkit-transform:translate(-25%,-25%) scale(.5);transform:translate(-25%,-25%) scale(.5)}}
+
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Optional: for better visibility */
+  }
+
+  .form-wrapper {
+    width: 300px; /* Adjust as needed */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }

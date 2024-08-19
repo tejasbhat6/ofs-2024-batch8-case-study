@@ -1,0 +1,65 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+ <div class="oj-hybrid-padding">
+  <h1 >Welcome !</h1>
+  <oj-table
+    id="accountTable"
+    aria-label="Accounts Table"
+    accessibility.row-header="account_type"
+    data="[[dataprovider]]"
+    
+    dnd='{"reorder": {"columns": "enabled"}}'
+    scroll-policy="loadMoreOnScroll"
+    scroll-policy-options='{"fetchSize": 10}'
+    columns='[
+        {
+            "headerText": "Account Type", 
+            "field": "account_type",
+            "resizable": "enabled",
+            "id": "account_type"
+        },
+        {
+            "headerText": "Account Rate", 
+            "field": "account_rate",
+            "resizable": "enabled",
+            "id": "account_rate"
+        },
+        {
+            "headerText": "Account Balance", 
+            "field": "account_balance",
+            "resizable": "enabled",
+            "id": "account_balance"
+        },
+        {
+            "headerText": "Account Min Balance", 
+            "field": "account_minimum_balance",
+            "resizable": "enabled",
+            "id": "account_minimum_balance"
+        },
+        {
+            "headerText": "Account Status", 
+            "field": "account_status",
+            "resizable": "enabled",
+            "id": "account_status"
+        },
+        {
+            "headerText": "Overdraft Amount", 
+            "field": "overdraft_amount",
+            "resizable": "enabled",
+            "id": "overdraft_amount"
+        }
+    ]'
+    class="demo-table-container">
+</oj-table>
+<br>
+  <div style="padding-inline: 400px ; margin-bottom: 50px;"><br><br>
+    <oj-c-button
+      id="button1"
+      on-oj-action="[[buttonAction]]"
+      label="Create Account"
+    ></oj-c-button>
+  </div>
+</div>
